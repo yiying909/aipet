@@ -1,0 +1,14 @@
+{
+"name": "aipet",
+"version": "1.0.0",
+"description": "AI Pet with ESP32 + Node.js",
+"main": "main.js",
+"type": "module",
+"scripts": {
+"start": "node main.js"
+},
+"keywords": ["ai", "iot", "esp32", "voice"],
+"author": "",
+"license": "ISC",
+"dependencies": {}
+}
