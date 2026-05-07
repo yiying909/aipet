@@ -6,6 +6,8 @@ import os.path
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
+import json
+
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
@@ -66,4 +68,5 @@ if __name__ == "__main__":
     tasks = fetch_google_tasks()
 
     for t in tasks:
-        print(t)
+        # print(t)
+        print(json.dumps(tasks))

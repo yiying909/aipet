@@ -59,3 +59,8 @@ export async function fetchWeather() {
         fahrenheit: fahrenheit
     };
 }
+
+// testing
+// const date = await fetchDate();
+// const weather = await fetchWeather();
+// console.log(date, weather)
