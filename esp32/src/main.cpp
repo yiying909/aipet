@@ -1,7 +1,8 @@
 #include <Arduino.h>
 #include <SSD1306Wire.h>
-SSD1306Wire lcd(0x3c, SDA, SCL);
 #include <ArduinoJson.h>
+
+SSD1306Wire lcd(0x3c, SDA, SCL);
 
 #define BUTTON1 34 // fetchDate, Weather, result1
 #define BUTTON2 0  // fetchToDO, result2
