@@ -2,6 +2,8 @@
  #can use google calendar api, see link below
 #https://developers.google.com/workspace/calendar
 #export async function fetchDate() {
+import json
+
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
@@ -38,3 +40,4 @@ if __name__ == "__main__":
     tasks = fetch_google_tasks()
     for t in tasks:
         print(t)
+        print(json.dumps(tasks))
