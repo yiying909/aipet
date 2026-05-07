@@ -39,5 +39,5 @@ def fetch_google_tasks():
 if __name__ == "__main__":
     tasks = fetch_google_tasks()
     for t in tasks:
-        print(t)
+        # print(t)
         print(json.dumps(tasks))
