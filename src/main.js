@@ -8,7 +8,7 @@
 
 import { SerialPort } from 'serialport'
 import { ReadlineParser } from '@serialport/parser-readline'
-
+import { fetchDate, fetchWeather } from './fetchDate'
 
 // serial port info
 // transfer baud rate
@@ -40,38 +40,51 @@ function openPort() {
 }
 
 // event listener call back for parser.on
-function handleInput(line) {
+//needs work -- currently placeholder
+async function handleInput(line) {
     console.log(line);
     try {
         const msg = JSON.parse(line);
 
+        //voice interaction is button 3
         if (msg.type === "voice") {
-            console.log("voice");
+            console.log("still need to do, once done will sendCommand");
             sendCommand({ action: 'voice' });
+            //await sendCommand(voice());
         }
 
+        //date and weather is button 1  
         if (msg.type === "date") {
-            console.log("date");
-            sendCommand({ action: 'date' });
+            await sendCommand(fetchDate());
+            await sendCommand(fetchWeather());
+
         }
 
+        //todo list is button 2
         if (msg.type === "todo") {
-            console.log("todo");
-            sendCommand({ action: 'todo' });
+            //await sendCommand(fetchTodo());
+            console.log("currently toDo is a python file, need it to be JS")
         }
     } catch (e) {
-        console.log("not JSON");
+        console.log("Invalid JSON:", line);
     }
 }
 
 // send response back to port
-function sendCommand(command) {
-    const payload = typeof command === 'string' ? command : JSON.stringify(command)
-    port.write(payload + '\n', (err) => {
-        if (err) {
-            console.error('Write error:', err.message)
-        }
-    })
+//command should be a Promise
+async function sendCommand(command) {
+    try{
+        const resolved = await command;
+        const payload = typeof resolved === 'string' ? resolved : JSON.stringify(resolved);
+
+        port.write(payload + '\n', (err) => {
+            if (err) {
+                console.error('Write error:', err.message)
+            }
+        })
+    } catch(err) {
+        console.error("Command failed: ", err);
+    }
 }
 
 function portConnectionCheck() {
