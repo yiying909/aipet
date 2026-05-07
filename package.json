@@ -1,14 +1,1 @@
-{
-"name": "aipet",
-"version": "1.0.0",
-"description": "AI Pet with ESP32 + Node.js",
-"main": "main.js",
-"type": "module",
-"scripts": {
-"start": "node main.js"
-},
-"keywords": ["ai", "iot", "esp32", "voice"],
-"author": "",
-"license": "ISC",
-"dependencies": {}
-}
+{"name":"aipet","version":"1.0.0","description":"AI Pet with ESP32 + Node.js","main":"main.js","type":"module","scripts":{"start":"node main.js"},"keywords":["ai","iot","esp32","voice"],"author":"","license":"ISC","repository":{"type":"git","url":"git+https://github.com/yiying909/aipet.git"},"bugs":{"url":"https://github.com/yiying909/aipet/issues"},"homepage":"https://github.com/yiying909/aipet#readme","dependencies":{"@serialport/parser-readline":"^13.0.0","dotenv":"^17.4.2","serialport":"^13.0.0"}}
