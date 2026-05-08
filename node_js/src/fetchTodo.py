@@ -10,6 +10,8 @@ import json
 
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
+import warnings
+warnings.filterwarnings("ignore")
 
 SCOPES = ['https://www.googleapis.com/auth/tasks.readonly']
 
@@ -66,7 +68,4 @@ def fetch_google_tasks():
 
 if __name__ == "__main__":
     tasks = fetch_google_tasks()
-
-    for t in tasks:
-        # print(t)
-        print(json.dumps(tasks))
+    print(json.dumps(tasks))

@@ -11,7 +11,7 @@ import { SerialPort } from 'serialport'
 import { ReadlineParser } from '@serialport/parser-readline' // parse serialport message
 import { handleDate, handleTodo, handleAsk } from './interaction.js'
 
-const SERIAL_PATH = '/dev/cu.wchusbserial10'  // makerbroad path
+const SERIAL_PATH = '/dev/cu.wchusbserial110'  // makerbroad path
 const BAUD_RATE = 115200
 
 // initialize serialport connection
