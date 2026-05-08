@@ -37,7 +37,8 @@ export async function handleDate() {
 
 // ── Todo ──
 export async function handleTodo() {
-    const { stdout } = await execFileAsync('python3', ['fetchTodo.py']) // execute py file into output
+    const pythonPath = '.venv/bin/python3';
+    const { stdout } = await execFileAsync(pythonPath, ['fetchTodo.py']) // execute py file into output
     let tasks = []
     // parse JSON
     // if error return message
