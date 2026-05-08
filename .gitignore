@@ -5,3 +5,5 @@
 .vscode/ipch
 credentials.json
 token.json
+node_js/.env
+node_js/node_modules

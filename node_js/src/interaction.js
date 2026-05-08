@@ -18,11 +18,11 @@ const TFT_MAX = 13
 // ── Date + Weather ──
 export async function handleDate() {
     // parallel handling
-    // const [dateInfo, weather] = await Promise.all([fetchDate(), fetchWeather()])
+    const [dateInfo, weather] = await Promise.all([fetchDate(), fetchWeather()])
 
     // hard code for testing
-    const dateInfo = { time: '11:41 AM', date: '05/07/2026' }
-    const weather = { celsius: 13.4, fahrenheit: 56.12 }
+    // const dateInfo = { time: '11:41 AM', date: '05/07/2026' }
+    // const weather = { celsius: 13.4, fahrenheit: 56.12 }
 
 
     // format into two lines
